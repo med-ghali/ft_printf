@@ -2,10 +2,14 @@
 
 int print_variable(char type, va_list *p)
 {
+    if (type == '%')
+        return ft_putchar('%');
     if (type =='c')
         return ft_putchar(va_arg(*p,int));
     if (type == 's')
         return ft_putstr(va_arg(*p,char *));
+    if (type == 'i' || type == 'd')
+        return ft_putsnbr(va_arg(*p,int));
 }
 
 int ft_printf(const char *s, ...)
@@ -30,10 +34,12 @@ int ft_printf(const char *s, ...)
 
 int main()
 {
-    char *s = "abcdef";
     char c = 'c';
     char a = 'a';
 
-    printf("%c\n",129);
-    ft_printf("%c",129);
+
+    int e = ft_printf("%c abcdef %c  %d  %i\n",a,c,544,655);
+    int g = printf("%c abcdef %c  %d  %i\n",a,c,544,655);
+    printf("\n%d %d",e ,g );
+
 }

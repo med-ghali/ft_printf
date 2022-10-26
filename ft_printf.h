@@ -11,6 +11,8 @@ int ft_printf(const char *, ...);
 
 int ft_putchar(char c);
 int ft_putstr(char *s);
-int ft_putnbr(int num);
+void ft_putnbr(long nb);
+int ft_putsnbr(int nb);
+int num_of_characters(int nb);
 
 # endif

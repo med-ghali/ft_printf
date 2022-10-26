@@ -19,16 +19,13 @@ int ft_putsnbr(int nb)
     ft_putnbr(nb);
     return num_of_characters(nb);
 }
-int num_of_characters(int nb)
+int num_of_characters(long nb)
 {
     int count;
 
     count = 1;
     if (nb < 0)
-    {
         count ++;
-        nb *= -1;
-    }
     while(nb/10)
     {
         count++;

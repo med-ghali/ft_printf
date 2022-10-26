@@ -10,6 +10,8 @@ int print_variable(char type, va_list *p)
         return ft_putstr(va_arg(*p,char *));
     if (type == 'i' || type == 'd')
         return ft_putsnbr(va_arg(*p,int));
+    if (type == 'u')
+         return ft_putunbr(va_arg(*p,unsigned int));
 }
 
 int ft_printf(const char *s, ...)
@@ -36,10 +38,10 @@ int main()
 {
     char c = 'c';
     char a = 'a';
+    char *p;
+    printf("%d",sizeof(p));
 
-
-    int e = ft_printf("%c abcdef %c  %d  %i\n",a,c,544,655);
-    int g = printf("%c abcdef %c  %d  %i\n",a,c,544,655);
-    printf("\n%d %d",e ,g );
-
+    // int e = ft_printf("%c abcdef %c  %d  %i\n",a,c,544,655);
+    // int g = printf("%c abcdef %c  %d  %i\n",a,c,544,655);
+    printf("\n%p",&c);
 }

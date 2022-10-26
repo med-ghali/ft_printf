@@ -17,19 +17,19 @@ int ft_putstr(char *s)
 int ft_putsnbr(int nb)
 {
     ft_putnbr(nb);
-    return num_of_characters(nb);
+    return num_of_characters(nb,10);
 }
-int num_of_characters(long nb)
+int num_of_characters(long nb,int base)
 {
     int count;
 
     count = 1;
     if (nb < 0)
         count ++;
-    while(nb/10)
+    while(nb/base)
     {
         count++;
-        nb /= 10;
+        nb /= base;
     }
     return count;
 }
